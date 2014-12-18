@@ -2,87 +2,189 @@
 
 edit()
 
-.h1 
-  font-size: 3em
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
 
-.h5
-  color: #000
+/* added from thinkful */
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
 
-/*
- stylus -u jeet -w style.styl
+/* CSS STRUCTURE  
+https://smacss.com/book/categorizing
+Base - reset, box
+Layout- grid, defining class,    bootstrap/foundation/jeet
+Module- Individual sections....rooms, 
+State- fuctions...swinging door  overides
+Theme...font,  */
 
-main
-  center(980px, 10px)
+html
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* keeps smooth tye */
+    height: 100%;
+    width: 100%;
 
-  p
-    font-size: 24px
-    line-height 150%
-    color black
+*, *:before, *:after 
+    box-sizing: inherit
 
-// splash
-#splash
-  position fixed
-  width 100%
-  height 100%
-  background url("/img/splash.jpg") no-repeat top center
-  background-size cover
-  z-index 99999
+body 
+    background: #eeeeee;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 24px; 
+    color: #838994; 
+    letter-spacing: 0.03em;
+    height: 100%;
+    width: 100%;
 
-  #splash-logo
-    center()
-    text-align center
-    margin-top 5px
+.content 
+    padding: 0 0.938rem;
+    margin: 0 auto;
+    min-width: 37.5rem;
 
-  h1, h3
-    text-transform uppercase
-    center()
-    text-align center
-    margin-top 5px
-    margin-bottom 5px
+:focus 
+    outline: none;
 
-  h1.heading
-    color white
-    font-size 250%
+// Splash Section
 
-  h3.sub-heading
-    font-size 140%
-    font-family 'Open Sans', sans-serif
-    font-weight 100
-    color #61555A
+.hero 
+    height: 100%
+    width: 100%
 
-  .view-map
-    position absolute
-    bottom 5%
-    text-transform uppercase
-    left 46%
-    font-size 140%
-    color #F8F8F8
-    text-decoration none
-    display none
-    border 2px solid #F8F8F8
-    padding 5px 20px
-    border-radius 25px
+.hero 
+    background-image: url('images/background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /* height: 50em; */
+    /* Layout Declarations */
+    text-align: center;
+    background-position: center center;
+    height: 45.938rem;
+    overflow: auto; /* ?' good explanation*/
 
-aside
-  position: fixed;
-  z-index 20
-  top 0
-  bottom 0
-  width 245px
-  overflow-y auto
-  font-size 2em
-  background-color #e6e6e6
-  left -245px
+@media all and (max-width: 699px) 
+  .hero 
+    background-color: #000; 
+    background-image: url('../images/background.jpg');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    background-position: center center;
 
-  .close
-    display block
-    padding 25px
-    text-align right
-    font-size 70%
-    a
-      font-family entypo
 
-  ul
-    list-style-type none
-    li a:hover
-      color #b8b8b8
+.hero > .content {
+    margin: 0 auto; /* centering */
+    max-width: 1200px;
+    margin-top: 8em;
+}
+
+.hero 
+    h1,h2 
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+     /* Keeping below repetitive CSS to remind self to bring together alike*/
+
+.hero h1 
+    font-style: italic;
+    font-size: 4em;
+    line-height: 1em;
+    text-shadow: 1px 1px 0px black;
+
+.hero h2 
+    font-size: 1em;
+    text-shadow: 1px 1px 0px black;
+    margin: 0 0 50px 0;
+    line-height: 1.8em;
+
+/* Buttons */
+
+.button 
+    z-index: 2;
+    position: absolute;
+    bottom: 40px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    :hover a:hover 
+        background: rgba(255,255,255,.8);
+        color: #000;
+        outline: 1px solid #999;
+
+/* Navigation Section */
+
+.top-navigation {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    background: #fff;
+    border-bottom: 1px solid #DDD;
+}
+
+.top-navigation > .content {
+    margin: 0 auto; /* centering */
+    max-width: 1200px;
+    height: 4.375rem;
+}
+
+.top-navigation .logo {
+    /* margin-left: 8em; */
+    /*height: 72px; */
+    height: 4.5rem;
+    /* padding: 0 1em; */
+    z-index: 9999; /* puts on top */
+}
+
+.top-navigation .links {
+    float: right;
+    font-family: 'Roboto', sans-serif;
+    color: #838994;
+    font-size: 1.04rem;
+    margin-top: 1.8rem;
+    -webkit-font-smoothing: antialiased;
+}
+.top-navigation .links li {
+    display: inline-block;
+    /*margin-left: 25px; or */
+    margin-left: 1.563rem;
+}
+.top-navigation .links .active {
+    color: #4c5058;
+    font-weight: 500;
+}
+.top-navigation .links li:hover {
+    cursor: pointer;
+    color: #333333;
+}
+
+/* note The specificity of the navigation menu*/
