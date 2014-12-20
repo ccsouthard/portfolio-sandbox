@@ -38,18 +38,6 @@ ol, ul {
 }
 /* End of Reset */
 
-
-/* End of Base Styles */
-
-/* CSS STRUCTURE  
-https://smacss.com/book/categorizing
-Base - reset, box
-Layout- grid, defining class,    bootstrap/foundation/jeet
-Module- Individual sections....rooms, 
-State- fuctions...swinging door  overides
-Theme...font,  */
-
-
 /* Navigation Section */
 
 html {
@@ -65,14 +53,37 @@ html {
 }
 
 body {
-    background: #eeeeee;
-    font-family: 'Roboto', sans-serif; 
+    background: #fff;
+    font-family: 'proxima-nova', sans-serif; 
     font-size: 24px; 
     color: #838994; 
     letter-spacing: 0.03em;
     height: 100%;
     width: 100%;
 
+}
+
+::selection {
+  /* Appearance Declarations 
+  This applies rules to the portion of a document that has been highlighted */
+    background: #FFE799;
+}
+
+a {
+    /* Typography Declrations */
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFCF33;
+}
+
+a:hover {
+    /* Tyopography Declarations */
+    color: #FFE799;
+}
+
+a:visited {
+    /* Typography Declarations */
+    color: #D1A000;
 }
 
 .content {
@@ -105,7 +116,8 @@ body {
 .top-navigation .logo {
     /* margin-left: 8em; */
     /*height: 72px; */
-    height: 4.5rem;
+    margin-top: 1rem;
+    height: 3rem;
     /* padding: 0 1em; */
     z-index: 9999; /* puts on top */
 }
@@ -169,37 +181,173 @@ body {
 
 .hero h1, 
 .hero h2 {
-    color: white;
+    color: white; 
+    font-family: "din-condensed-web",sans-serif;
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
+
      /* Keeping below repetitive CSS to remind self to bring together alike*/
 }
 
 
 .hero h1 {
     font-style: italic;
-    font-size: 4em;
+    font-size: 3rem;
     line-height: 1em;
     text-shadow: 1px 1px 0px black;
 }
 
 .hero h2 {
-    font-size: 1em;
+    font-size: 1rem;
     text-shadow: 1px 1px 0px black;
-    margin: 0 0 50px 0;
+    margin: 50px 0 50px 0;
     line-height: 1.8em;
 
 }
 /* Buttons */
 
-.button {
-    width: 10%;
+.hero-button {
+    margin-top: 14rem;
+    font-size: .9rem;
+    background: rgba(0,0,0,1);
+    color: #fff;
+    height: 3.7em;
+    line-height: 3.7em;
+    padding: 0 1em 0 1em;
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
     text-align: center;
+    border: none;
 }
 
-.button:hover a:hover {
-    background: rgba(255,255,255,.8);
-    color: #000;
-    outline: 1px solid #999;
+.hero-button:hover {
+    font-size: .9rem;
+    background: #FFFFFF;
+    color: #141414;
+
 }
+/* Portfolio Grid & */
+
+
+.portfolio {
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 5rem;
+}
+
+.portfolio > .work {
+    width: 33.3333333%;
+    display: inline-block;
+    /* styles to assist with debugging 
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 4em;
+    /* give w&h for box sizing*/
+}
+
+.portfolio .content {
+    margin-top: 7.875rem;
+    padding: none;
+    color: #1d1e21;
+    text-align: center;
+}
+.portfolio h2 {
+    font-size: 2.75rem;
+    margin: 1.625rem 0 3.125rem;
+    font-weight: 300;
+}
+.portfolio .work > li {
+    width: 33.3333333%;
+    float:left;
+}
+.portfolio .work h3 {
+    font-weight: 400;
+    font-size: 1.563rem;
+    margin: 2.5rem 0px 1.875rem;
+}
+.portfolio .work p {
+    font-weight: 300;
+    font-size: 1.313rem;
+}
+
+.portfolio .img-wrapper {
+   /* display: inline-block;
+    overflow: hidden;    
+    border: 1px solid gray; */
+}
+
+
+.portfolio .img-wrapper img {
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    -ms-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    vertical-align: middle;
+
+}
+
+
+.portfolio .img-wrapper img:hover {
+    -webkit-transform:scale(1.5); /* Safari and Chrome */
+    -moz-transform:scale(1.5); /* Firefox */
+    -ms-transform:scale(1.5); /* IE 9 */
+    -o-transform:scale(1.5); /* Opera */
+    transform:scale(1.5);
+}
+
+/**
+ * Footer
+ */
+.social {
+    background-color: #fff;
+    overflow: auto;
+    padding-bottom: 4.375rem;
+    text-align: center;
+    margin: 0 auto;
+}
+.social hr {
+    border: 0;
+    border-top: 1px solid #eaebec;
+    margin: 1.313rem 0;
+}
+.social .icons > li {
+    border-radius: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    margin: 1.25rem 5px;
+    border: 1px solid #eaebec;
+    padding: 0.625rem 0;
+    text-align: center;
+}
+.social .icons > li:hover {
+    cursor: pointer;
+}
+.social .twitter {
+    color: #414141;
+}
+.social .facebook {
+    color: #414141;
+}
+.social .instagram {
+    color: #414141;
+}
+.social .copy {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #838994;
+}
+
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. nav
+ * 3. main
+ * 4. aside
+ * 5. footer
+ */

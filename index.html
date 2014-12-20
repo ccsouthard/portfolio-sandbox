@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="css/style.css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
- <!--   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
-    <link href='http://fonts.googleapis.com/css?family=Ropa+Sans:400,400italic' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/x-icon"  href="favicon_name.ico">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <script src="//use.typekit.net/rbv7far.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
 
 	<title>CC Southard| FEWD</title>
 </head>
@@ -20,7 +20,7 @@
 			<h1 class="site-title"> CC Southard | Developer </h1>
 			<h2 class="sub-site-title"> Front-End Design Boston </h2>
 
-			<button class="button"> View Projects </button>
+		<a href="#port"> <button class="hero-button"> View Projects </button> </a>
 
 		</div>
 	</section>
@@ -35,40 +35,44 @@
                 <li>BLOG</li>
                 <li>CONTACT</li>
             </ul>
-           <img class="logo" src="images/CCS.png" alt="Logo Image" width="30px" height="30px">
+           <img class="logo" src="images/CCS.PNG" alt="Logo Image">
 <!-- have floating elements above non-floating elements -->
         </div>
     </nav>
 
 <!-- Portfolio Section -->
-
+    <div id="port"
     <section class="portfolio">
         <div class="content">
 
             <h2>Selected Work</h2>
+             <div class="img-wrapper">
+                <ul class="work">
+                   
+                    <li>
+                        <img width="250px" height="250px" src="images/1.jpg" alt="Karma Clone Image">
+                        <div class="caption">
+                            <h3>Karma Clone</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img width="250px" height="250px" src="images/2.jpg" alt="NYT Hack">
+                        <div class="caption">
+                            <h3>NYT Hack</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <img width="250px" height="250px" src="images/3.jpg" alt="tbd">
+                        <div class="caption">
+                            <h3>Placeholder</h3>
+                        </div>
 
-            <ul class="devices">
-                <li>
-                    <img width="127px" height="127px" src="images/icon-devices.svg" alt="Karma Clone Image">
-                    <div class="caption">
-                        <h3>Karma Clone</h3>
-                    </div>
-                </li>
-                <li>
-                    <img width="127px" height="127px" src="images/icon-coffee.svg" alt="NYT Hack">
-                    <div class="caption">
-                        <h3>NYT Hack</h3>
-                    </div>
-                </li>
-                <li>
-                    <img width="127px" height="127px" src="images/icon-refill.svg" alt="tbd">
-                    <div class="caption">
-                        <h3>Placeholder</h3>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section> 
+    </div>
     
     <section class="blog">
         <div class="content">
@@ -80,5 +84,25 @@
         </div>
     </section>
 
+    <footer class="social">
+        <div class="content">
+            <hr>
+            <h5>Check out</h5>
+            <ul class="icons">
+                <li class="twitter">
+                    <i class="fa fa-twitter"></i>
+                </li>
+                <li class="facebook">
+                    <i class="fa fa-facebook"></i>
+                </li>
+                <li class="instagram">
+                    <i class="fa fa-instagram"></i>
+                </li>
+            </ul>
+            <span class="copy">
+                &copy; CS
+            </span>
+        </div>
+    </footer>
 </body>
 </html>

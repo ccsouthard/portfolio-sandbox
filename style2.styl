@@ -504,8 +504,117 @@ text-align: center;
 background: rgba(255,255,255,.8);
 color: #000;
 outline: 1px solid #999;
+}/* Buttons */
+
+/*
+.hero-button {
+    text-shadow: none;
+    border-style: none;
+    border-radius: 4px; /* rem ? */
+/*   padding: 16px 26px; /* em vs px */
+/*  line-height: 1.33;
+    width: 15%;
+
+    margin: 2em 0;
+    background: #fff;
+    cursor: pointer;
+}
+*/
+
+/* Portfolio Grid & */
+
+
+.portfolio {
+    background: #fff;
+    overflow: hidden;
+    padding-bottom: 5rem;
 }
 
-projects {
-display: inline-block;
-padding: 0 3
+.portfolio > .work {
+    width: 33.3333333%;
+    display: inline-block;
+    /* styles to assist with debugging 
+    border: 1px solid black;
+    box-sizing: border-box;
+    height: 4em;
+    /* give w&h for box sizing*/
+}
+
+.portfolio .content {
+    margin-top: 7.875rem;
+    padding: none;
+    color: #1d1e21;
+    text-align: center;
+}
+.portfolio h2 {
+    font-size: 2.75rem;
+    margin: 1.625rem 0 3.125rem;
+    font-weight: 300;
+}
+.portfolio .work > li {
+    width: 33.3333333%;
+    float:left;
+}
+.portfolio .work h3 {
+    font-weight: 400;
+    font-size: 1.563rem;
+    margin: 2.5rem 0px 1.875rem;
+}
+.portfolio .work p {
+    font-weight: 300;
+    font-size: 1.313rem;
+}
+
+
+/**
+ * Footer
+ */
+.social {
+    background-color: #fff;
+    overflow: auto;
+    padding-bottom: 9.375rem;
+    text-align: center;
+    margin: 0 auto;
+}
+.social hr {
+    border: 0;
+    border-top: 1px solid #eaebec;
+    margin: 1.313rem 0;
+}
+.social .icons > li {
+    border-radius: 1.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    margin: 1.25rem 5px;
+    border: 1px solid #eaebec;
+    padding: 0.625rem 0;
+    text-align: center;
+}
+.social .icons > li:hover {
+    cursor: pointer;
+}
+.social .twitter {
+    color: #55acee;
+}
+.social .facebook {
+    color: #4c66a4;
+}
+.social .instagram {
+    color: #3f729b;
+}
+.social .copy {
+    font-size: 0.9rem;
+    font-weight: 300;
+    color: #838994;
+}
+
+
+/* We rely on source order for mobile-first approach
+ * in this case:
+ * 1. header
+ * 2. nav
+ * 3. main
+ * 4. aside
+ * 5. footer
+ */
