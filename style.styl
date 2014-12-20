@@ -1,7 +1,27 @@
 @import 'jeet'
+//// VARIABLES 
 
-edit()
+background-color = #eee
+highlight-color = #3084bf
 
+//px to rem converter variable
+// rem 160px = 10rem x 16px
+// 160px/16 = 10rem
+// em affected by fz
+// rem better for container element
+// leave fz alone
+// 
+// 
+// 1px / 16px = 0.625rem
+
+// PX  to REM variable:
+$base-font-size = 16
+$px = ( 1 / base-font-size ) rem
+
+// * by var 
+// max-width 500 *$px
+//import 'nib'
+//  stylus -u jeet -w style.styl
 /**
  * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
  * http://cssreset.com
@@ -33,7 +53,6 @@ footer, header, hgroup, menu, nav, section {
     display: block;
 }
 
-/* added from thinkful */
 body {
     line-height: 1;
 }
@@ -41,39 +60,34 @@ ol, ul {
     list-style: none;
 }
 
-/* CSS STRUCTURE  
-https://smacss.com/book/categorizing
-Base - reset, box
-Layout- grid, defining class,    bootstrap/foundation/jeet
-Module- Individual sections....rooms, 
-State- fuctions...swinging door  overides
-Theme...font,  */
-
+// Begin Styles
+// 
 html
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased; /* keeps smooth tye */
-    height: 100%;
-    width: 100%;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; /* keeps smooth tye */
+  height: 100%;
+  width: 100%;
 
 *, *:before, *:after 
-    box-sizing: inherit
+  box-sizing: inherit
+  background: none;
 
 body 
-    background: #eeeeee;
-    font-family: 'Roboto', sans-serif; 
-    font-size: 24px; 
-    color: #838994; 
-    letter-spacing: 0.03em;
-    height: 100%;
-    width: 100%;
+  background: background-color;
+  font-family: 'Roboto', sans-serif; 
+  font-size: 20px; 
+  color: #838994; 
+  letter-spacing: 0.03em;
+  height: 100%;
+  width: 100%;
 
 .content 
-    padding: 0 0.938rem;
-    margin: 0 auto;
-    min-width: 37.5rem;
+  padding: 0 0.938rem;
+  margin: 0 auto;
+  min-width: 37.5rem;
 
 :focus 
-    outline: none;
+  outline: none;
 
 // Splash Section
 
@@ -91,6 +105,7 @@ body
     background-position: center center;
     height: 45.938rem;
     overflow: auto; /* ?' good explanation*/
+    z-index 2
 
 @media all and (max-width: 699px) 
   .hero 
@@ -99,6 +114,7 @@ body
     background-size: 200px 200px;
     background-repeat: no-repeat;
     background-position: center center;
+    z-index 2
 
 
 .hero > .content {
@@ -109,10 +125,12 @@ body
 
 .hero 
     h1,h2 
+    font-family: 'Ropa Sans', sans-serif;
     color: white;
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
+    background: 
      /* Keeping below repetitive CSS to remind self to bring together alike*/
 
 .hero h1 
@@ -127,64 +145,88 @@ body
     margin: 0 0 50px 0;
     line-height: 1.8em;
 
-/* Buttons */
-
-.button 
-    z-index: 2;
-    position: absolute;
-    bottom: 40px;
-    left: 0px;
-    width: 100%;
-    text-align: center;
-    :hover a:hover 
-        background: rgba(255,255,255,.8);
-        color: #000;
-        outline: 1px solid #999;
-
 /* Navigation Section */
 
-.top-navigation {
+.top-navigation 
     position: fixed;
     width: 100%;
     z-index: 9999;
     background: #fff;
     border-bottom: 1px solid #DDD;
-}
 
-.top-navigation > .content {
+.top-navigation > .content 
     margin: 0 auto; /* centering */
     max-width: 1200px;
     height: 4.375rem;
-}
 
-.top-navigation .logo {
+.top-navigation .logo 
     /* margin-left: 8em; */
     /*height: 72px; */
-    height: 4.5rem;
+    height: 50%
+    width: 50%
     /* padding: 0 1em; */
     z-index: 9999; /* puts on top */
-}
 
-.top-navigation .links {
+.top-navigation .links
     float: right;
     font-family: 'Roboto', sans-serif;
     color: #838994;
     font-size: 1.04rem;
     margin-top: 1.8rem;
     -webkit-font-smoothing: antialiased;
-}
-.top-navigation .links li {
+
+.top-navigation .links li 
     display: inline-block;
     /*margin-left: 25px; or */
     margin-left: 1.563rem;
-}
-.top-navigation .links .active {
+
+.top-navigation .links .active 
     color: #4c5058;
     font-weight: 500;
-}
-.top-navigation .links li:hover {
+
+.top-navigation .links li:hover 
     cursor: pointer;
     color: #333333;
-}
+
 
 /* note The specificity of the navigation menu*/
+
+
+/* Buttons */
+
+.button
+  font-family: 'Avenir Next', sans-serif
+  font-size 42*$px
+  margin 200*$px auto
+  display inline-block
+  color #fff
+  background-color #b50000
+  font-size 3.5em
+  font-weight 700
+  padding 0.25em 0.85em
+  border 6*$px solid rgb(214, 0, 0)
+
+.hero-button 
+    z-index: 9999;
+    background: black
+/*    position: absolute;
+    bottom: 40px;
+    left: 0px;
+ width: 100%;
+    text-align: center;
+    :hover a:hover 
+        background: rgba(255,255,255,.8);
+        color: #000;
+        outline: 1px solid #999;\\
+
+*/
+// BLOG
+
+.blog
+  center (960)
+aside
+  col (1/3)
+
+article
+  col (2/3)
+  color black

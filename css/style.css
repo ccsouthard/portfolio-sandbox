@@ -89,11 +89,11 @@ body {
 /* Navigation Section */
 
 .top-navigation {
-    position: fixed;
     width: 100%;
     z-index: 9999;
     background: #fff;
     border-bottom: 1px solid #DDD;
+
 }
 
 .top-navigation > .content {
@@ -194,21 +194,12 @@ body {
 /* Buttons */
 
 .button {
-z-index: 2;
-position: absolute;
-bottom: 40px;
-left: 0px;
-width: 100%;
-text-align: center;
+    width: 10%;
+    text-align: center;
 }
 
 .button:hover a:hover {
-background: rgba(255,255,255,.8);
-color: #000;
-outline: 1px solid #999;
-}
-
-projects {
-display: inline-block;
-padding: 0 3.5em 0 3.5em;
+    background: rgba(255,255,255,.8);
+    color: #000;
+    outline: 1px solid #999;
 }
